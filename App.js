@@ -800,7 +800,7 @@ const Body = () => {
     <div className="restaurant-list">
       {
         resturantList.map((restaurant => {
-          return <ResturantCard {...restaurant.data} />
+          return <ResturantCard {...restaurant.data} key={restaurant.data.id}/>
         }))
       }
     </div>
