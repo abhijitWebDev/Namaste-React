@@ -1,0 +1,42 @@
+* Is Jsx mandatory for React?
+No, Jsx isnt mandatory for react, you can write the code using React.createElement(component, props, [h1, h2] children) code example const container = React.createElement("div", {id:"container"},[Heading1, Heading2] );
+, Jsx is HTML like syntax for example const hotel = <h1>Zillionth Bistro</h1> but while writing in this manner, the code can become very complex and tedious to read , so the Jsx was introduced, to make developers life easy and to make it more readable, that is the reason why Jsx is used in react.
+
+* Is ES6 mandatory for React?
+Es6 is not mandatory for React, ES stands for ECMA script ie Javascript was standarized for writing the code in a specific manner. React uses lots of modern ES6 features such as Arrow functions, The spread operator, the let and const it is all used by the modern day react and it will be very easy to write the code, if you are familiar with such terminologies and syntaxes.
+
+* What is the difference between {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX?
+{TitleComponent} this is used when we are using a javascript expression or a variable or React element, The {} can embed a Javascript expression or variable or an React element inside it.
+<TitleComponent /> This is used when we are using a Javascript function which is returning the JSX element. 
+<TitleComponent></TitleComponent> This is used when The JSX element has Child components.
+
+*  How can I write comments in JSX?
+To write the comments in React, you will have to write comments in {}, as we know we can write js in the curly braces, so to write the comments may it be single line or multiline comments, you have to write it in {} in react {/* */}
+
+* What is <React.Fragment></React.Fragment> and <></>?
+<React.Fragment></React.Fragment> this is a feature in react which allows you to return multiple elements from a react component also allowing to return a list  childrens  without adding additonal node to the DOM, it has also a short hand syntax <></>. The only difference is you cant put a key in short hand syntax or it doesnt support key attribute.
+
+* What is a virtual DOM?
+Virtual Dom is a copy of a real dom,  it can be also called as a blueprint of a real dom. It contains all the properties of a real dom but it cannot change or write to the screen like a real dom does.
+* What is Reconcilliation in React?
+The Reconcilliation is the process through which the react updates the DOM. It uses the diffing algorithm through which it is easier for React to track the changes and update the DOM. The copy of the real DOM is created ie Virtual Dom, through which react compares the changes and, whenever the developer makes the change , React compares the Real Dom with Virtual DOM and then the changes tracked and the respective nodes are updated in the Real dom, leaving the other nodes which are not changed as it is. The comparision is done using the diffing algorithm.
+
+* What is React Fiber?
+React fiber is an internal feature or engine to make react faster and smarter. The fiber reconciler which became the default reconciler from React 16 and above, is a complete re write of reacts Reconcilliation algorithm to solve the issues in react.
+Because Fiber is asynchronous, React can:
+
+.Pause, resume, and restart rendering work on components as new updates come in.
+.Reuse previously completed work and even abort it if not needed.
+.Split work into chunks and prioritize tasks based on importance.
+
+* Why do we need keys in React?
+Keys are a very special attribute in react which are included while creating lists, The keys are used in React to identify which items are changed, updated, deleted in the react lists. The keys plays a vital part in rendering, we can also say that keys are unieque identifier, which helps to identify or which gives an identity to the elements in the lists.Keys should be given to the elements within the array to give the elements a stable identity. 
+Example <li key={0}>'a'</li>
+<li key={1}>'b'</li>
+<li key={2}>'c'</li>
+
+* Can we use the Index as the keys in React?
+Yes, we can use the indexes as the keys in React, but it is not considers as a standard practice, as the order of the elements/items may change, it can negatively affect the performance and cause issues with the component state.Keys are taken from each object which is being rendered, If we modify the incomming the data, the chances are it may render them in unusual manner.
+
+* What is config driven UI?
+Config Driven UI is based on the data that application receives. It is a good practice that a config driven UI is used for making the application Dynamic.
