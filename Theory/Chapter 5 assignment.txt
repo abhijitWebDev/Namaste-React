@@ -1,0 +1,64 @@
+* What is the difference between a Named , Default and * exports?
+Default Import:Javascript(Es6) provides us with import and export modules, so that we can use the code/data in other files. The modern javascript provides us with two ways of exporting the files ie the Named exports and Default exports. The default export is used when we have to export a one element by default. The naming which is used for importing is independent in case of default, we can use any name while importing the default export. The component is exported like this in case of default export.
+const Hero = () => {};
+export default Hero;
+and the component is imported from Hero.js file like: here we must omit the curly braces in Hero.
+import Hero from './Hero.js';
+
+Named Export: Javascript(Es6) provides a solution to import multiple elements from a single file. This is called as a named export. This feature allows us to import multiple or a specific component or element from a file. The import is done by using {} and inside curly braces, we have to specify the element or elements which we are importing from that file.
+export const MyStyle = () => {}
+export const MyStyle2 = () => {}
+
+This is the way, how the named exports are done
+
+while importing it we have to use the following syntax
+import {MyStyle} from 'Hero.js'.
+
+* export: The * export allows us to export all the elements in the file or module as a component. The component is exported in Hero.js as follows
+export const MyHero1 = () => {}
+export const MyHero2 = () => {}
+export const MyHero3 = () => {} 
+
+The import is done as follows
+import * as Heros from 'Hero.js'
+
+<MainComponents.MyHero1 />
+<MainComponents.MyHero2 />
+<MainComponents.MyHero3 />
+
+* What is the importance of config.js file?
+Configuration files("config files" for short) are important to modern computing, This allow you to customize how you interact with an application or how an application interacts with the rest of your system. It's thanks to config files that any time you launch application, it has "memories" of how you like to use it.
+
+Sample of config file
+firstName= "Abhijit"
+lastName = "Mone"
+
+* What are React-hooks?
+Hooks are new addition in React16.8. Hooks are nothing but Javascript function also known as functional components. It is also used to isolate the reuseablity part from a functional component. Hooks can be stateful and manage side effects. It allows you to use the stateful logic without making changes to the hirearchy of the component.This makes it easy to share the hooks with other components or community.
+
+The number of hooks that react provides is
+useState: To manage states. Returns a stateful value and an updater function to update it.
+useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+useContext: To return the current value for a context.
+useReducer: A useState alternative to help with complex state management.
+useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
+useMemo: It returns a memoized value that helps in performance optimizations.
+useRef: It returns a ref object with a current property. The ref object is mutable. It is mainly used to access a child component imperatively.
+useLayoutEffect: It fires at the end of all DOM mutations. It's best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
+useDebugValue: Helps to display a label in React DevTools for custom hooks.
+
+* Why do we need useState hook?
+This hook is used for maintaining the state in our React application. It tracks the changes in the state. So basically it encapsulates the local state in the functional component. It has a special function to take the initial state as the argument and it returns an array of two entries.UseState encapsulate only singular value from the state, for multiple state we need to have useState calls.
+The syntax of useState is
+const [state, setState] = useState(initialState);
+
+For importing use State this syntax is used
+import {useState} from 'react';
+
+we can use hooks in our functional components
+const Sample = (props) => {
+  // You can use Hooks here!
+  return <div />;
+}
+
+
