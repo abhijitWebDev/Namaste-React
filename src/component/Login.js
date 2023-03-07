@@ -61,6 +61,8 @@ const Login = () => {
                   {errors.email && touched.email && errors.email}
                 </p>
                 {/* input with passing formik parameters like handleChange, values, handleBlur to input properties */}
+                <span>Password
+                </span>
                 <input
                   type="password"
                   name="password"
