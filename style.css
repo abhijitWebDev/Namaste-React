@@ -28,8 +28,22 @@
 .card > img {
   width: 100%;
 }
+.card >h2,h3,h4 {
+  color: black;
+}
 
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.shimmer-card {
+  background-color: grey;
+  width:200px;
+  height:200px;
+  margin:20px;
+}
+
+.menu {
+  display: flex;
 }

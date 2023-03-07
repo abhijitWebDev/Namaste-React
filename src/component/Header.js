@@ -1,30 +1,60 @@
-import {useState} from 'react';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import foodLogo from '../assets/food-logo.jpeg';
 const Title = () => (
-    <a href="/">
-      <img
-        src="https://th.bing.com/th/id/OIP._nsBEPa9cV8OUb_96KNxZAHaHa?pid=ImgDet&rs=1"
-        alt="logo"
-        className="logo"
-      />
-    </a>
-  );
-  
-  const HeaderComponent = () => {
-    const[loggedIn, setLoggedIn] = useState(false);
-    return (
-      <div className="header">
-        <Title />
-        <div className="nav-items">
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Cart</li>
-          </ul>
-        </div>
-        {loggedIn ? <button onClick={() => setLoggedIn(false)}>Logout</button> : <button onClick={() => setLoggedIn(true)}>Log In</button>}
-      </div>
-    );
-  };
+  <a href="/">
+    <img src={foodLogo} alt="logo" className="logo" />
+  </a>
+);
 
-  export default HeaderComponent;
+const HeaderComponent = () => {
+  const [loggedIn, setLoggedIn] = useState(true);
+  const navigate = useNavigate();
+  return (
+    <div className="header">
+      <Title />
+      <div className="nav-items">
+        <ul>
+          <li>
+            <Link to="/">
+            Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" >
+            About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" >
+            Contact
+            </Link>
+          </li>
+          <li>Cart</li>
+          <li>
+            {/* use conditional rendering for login and logout */}
+            {loggedIn ? (
+              <button
+                className="logout-btn"
+                onClick={() => setLoggedIn(false)}
+              >
+                Logout
+              </button>
+            ) : (
+              <button className="login-btn" onClick={() => navigate("/login")}>
+                Login
+              </button>
+            )}
+          </li>
+        </ul>
+      </div>
+      {loggedIn ? (
+        <button onClick={() => setLoggedIn(false)}>Logout</button>
+      ) : (
+        <button onClick={() => setLoggedIn(true)}>Log In</button>
+      )}
+    </div>
+  );
+};
+
+export default HeaderComponent;
